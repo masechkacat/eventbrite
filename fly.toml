@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for app-evenbrite-thp on 2023-11-07T22:27:32+01:00
+# fly.toml app configuration file generated for piece-of-shit on 2023-11-07T22:58:48+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "app-evenbrite-thp"
+app = "piece-of-shit"
 primary_region = "cdg"
 console_command = "/rails/bin/rails console"
 

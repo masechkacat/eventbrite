@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TheGossipProjectRor</title>
+    <title>Evenbrite</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -51,7 +51,7 @@
   <body data-turbo="false">
     <nav class="navbar navbar-expand-xl navbar-dark" style="z-index: 3; background-color: rgba(0, 0, 0, 0.5); ">
       <div class="container-fluid">
-        <a href="/" class="navbar-brand">The Gossip Project</a>
+        <a href="/" class="navbar-brand">Evenbrite</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,7 +59,7 @@
           <ul class="navbar-nav ms-auto">
           <% if user_signed_in? %>
           <li class="nav-item">
-          Voici ton email : <%= current_user.email %>
+         <div class="nav-link"> Voici ton email : <%= current_user.email %></div>
         </li>
         <% end %>
           <li class="nav-item">

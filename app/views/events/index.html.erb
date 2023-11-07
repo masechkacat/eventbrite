@@ -1,14 +1,28 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Events</h1>
-
-<div id="events">
-  <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
-  <% end %>
+<div class="hero" style="background-image: url(<%= asset_path('dgd.jpg') %>); height: 400px; width: 100%; position: absolute; top: 0;"></div>
+<div class="container" style="padding-top: 100px; position: relative;">
+    <h1 class="display-5 fw-bold text-white">Welcome to Evenbrite</h1>
+    <p class="col-md-8 fs-4" style="background-color: rgba(0, 0, 0, 0.5); color: bisque;">Here you can find all the latest events from around town.</p>
+    <% if user_signed_in? %>
+        <%= link_to "Create New Event", new_event_path, class: "btn btn-warning" %>
+    <% else %>
+        <%= link_to "Register", new_user_registration_path, class: "btn btn-warning" %>
+        <%= link_to "Log In", new_user_session_path, class: "btn btn-secondary" %>
+    <% end %>
 </div>
 
-<%= link_to "New event", new_event_path %>
+<p style="color: green"><%= notice %></p>
+
+
+<div class="container" style="padding-top: 100px;">
+  <div id="events" class="row">
+    <% @events.each do |event| %>
+      <div class="col-md-3 col-xl-3">
+        <div class="card bg-c-<%= ['yellow', 'pink', 'blue', 'green'].sample %> order-card m-2">
+         <%= render event %>
+          <%= link_to "Show this event", event, class: "btn btn-outline-none" %>
+        </div>
+     </div>
+   <% end %>
+  </div>
+</div>
+
