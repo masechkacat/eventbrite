@@ -1,12 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @event %>
+<div class="container mt-4">
+  <div class="row">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between">
+        <h2><%= @event.title %></h2>
+        <div class="d-flex align-items-center" style="gap: 4%;">
+        <% if current_user == @event.user %>
+          <%= link_to "Edit", edit_event_path(@event), class: "btn btn-warning" %>
+          <%= button_to "Destroy this event", @event, method: :delete, class: "btn btn-secondary"%>
+        <% end %>
+        </div>
+      </div>
 
-<div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %> |
-  <%= link_to "Log in", new_user_session_path %> |
-  <%= link_to "Sign up", new_user_registration_path %>
+      <%= render @event %>
 
-  <%= button_to "Destroy this event", @event, method: :delete %>
+</div>
+</div>
 </div>

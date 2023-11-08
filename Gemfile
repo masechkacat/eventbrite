@@ -60,7 +60,6 @@ group :development do
   # gem "spring"
  gem "faker"
  gem "table_print"
- gem "dotenv-rails"
 end
 
 group :test do
@@ -77,3 +76,6 @@ gem "sentry-rails", "~> 5.12"
 
 gem "devise"
 
+gem "dotenv-rails"
+
+gem "stripe"
